@@ -27,10 +27,10 @@
     },
     methods: {
       itemClick: function (index) {
-        // 1.改变currentIndex
+        
         this.currentIndex = index;
 
-        // 2.发出事件
+       
         this.$emit('itemClick', index)
       }
     }
