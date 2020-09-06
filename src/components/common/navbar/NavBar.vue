@@ -23,8 +23,6 @@
     line-height: 44px;
     text-align: center;
 
-    /*border-bottom: 1px solid #eee;*/
-    /*box-shadow: 0 1px 1px rgba(100,100,100,.08);*/
   }
 
   .nav-left {
