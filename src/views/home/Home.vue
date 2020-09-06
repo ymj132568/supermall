@@ -73,10 +73,9 @@
     },
     created() {
       console.log('创建Home');
-      // 1.请求多个数据
+    
       this.getMultiData()
 
-      // 2.请求商品数据
       this.getHomeProducts(POP)
       this.getHomeProducts(NEW)
       this.getHomeProducts(SELL)
@@ -88,8 +87,7 @@
       this.$refs.hSwiper.stopTimer()
     },
     updated() {
-      // this.tabOffsetTop = this.$refs.tabControl.$el.offsetTop
-      // console.log(this.tabOffsetTop);
+     
     },
     methods: {
 		  tabClick(index) {
@@ -106,10 +104,10 @@
         }
       },
       contentScroll(position) {
-		    // 1.决定tabFixed是否显示
+		    
         this.isTabFixed = position.y < -this.tabOffsetTop
 
-        // 2.决定backTop是否显示
+        
         this.showBackTop = position.y < -BACKTOP_DISTANCE
       },
       loadMore() {
@@ -118,14 +116,12 @@
       backTop() {
         this.$refs.scroll.scrollTo(0, 0, 300)
       },
-      /**
-       * 网络请求相关方法
-       */
+      
       getMultiData() {
         getHomeMultidata().then(res => {
           this.banners = res.data[BANNER].list
           this.recommends = res.data[RECOMMEND].list
-          // 下次更新DOM时,获取新的tabOffsetTop值(不保险,可以在updated钩子中获取)
+          
           this.$nextTick(() => {
             this.tabOffsetTop = this.$refs.tabControl.$el.offsetTop
           })
